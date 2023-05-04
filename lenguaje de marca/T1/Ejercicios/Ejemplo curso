@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Lista xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Curso.xsd">
+
+	<Curso>
+
+		<Titulo>Lenguaje de Marcas</Titulo>
+
+		<nocturno>false</nocturno>
+
+		<Horas>200</Horas>
+
+		<fechaComienzo>2017-03-17</fechaComienzo>
+
+		<horaComienzo>08:30:00</horaComienzo>
+
+		<precio>20.0</precio>
+
+		<precio>30.0</precio>
+
+		<precio>40.0</precio>
+
+		<tema>Introduccion</tema>
+
+		<tema>Desarrollo</tema>
+
+		<telefono>981619900</telefono>
+
+		<telefono>981619800</telefono>
+
+	</Curso>
+
+	<Curso>
+
+		<Titulo>BBDD</Titulo>
+
+		<nocturno>true</nocturno>
+
+		<Horas>210</Horas>
+
+		<fechaComienzo>2017-03-20</fechaComienzo>
+
+		<horaComienzo>09:30:00</horaComienzo>
+
+		<precio>20.0</precio>
+
+		<telefono>981619900</telefono>
+
+		<telefono>981619800</telefono>
+
+	</Curso>
+
+ </Lista>
+
+***SOLUCIÓN***
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Lista">
+
+       <xs:complexType> <!-- lista es complejo porque contiene elementos -->
+
+           <xs:sequence>
+
+             <xs:element name="Curso" maxOccurs="unbounded">
+
+               <xs:complexType>  <!-- curso es complejo porque contiene elementos -->
+
+                 <xs:sequence>
+
+                       <xs:element name="Titulo" type="xs:string"/>
+
+                       <xs:element name="nocturno" type="xs:boolean"/>
+
+                       <xs:element name="Horas" type="xs:nonNegativeInteger" minOccurs="0"/>
+
+                       <xs:element name="fechaComienzo" type="xs:date"/>
+
+                       <xs:element name="horaComienzo" type="xs:time"/>
+
+                       <xs:element name="precio" type="xs:float" maxOccurs="unbounded"/>
+
+                       <xs:element name="tema" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+
+                       <xs:element name="telefono" type="xs:string" minOccurs="2" maxOccurs="2"/>
+
+                 </xs:sequence>
+
+              </xs:complexType>
+
+             </xs:element>
+
+           </xs:sequence>
+
+       </xs:complexType>
+
+    </xs:element>
+
+
+</xs:schema>
