@@ -1,0 +1,53 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE listado [
+<!ELEMENT listado (futuro+, divisa+, bonos+, letras+)>
+
+  <!ATTLIST futuro (precio) #REQUIRED>
+    <!ELEMENT futuro (producto, mercado?, ciudad_procedencia) >
+      <!ELEMENT producto (#PCDATA)>   
+      <!ELEMENT mercado (#PCDATA)>   
+      <!ELEMENT ciudad_procedencia (Madrid|NuevaYork|Frankfurt|Tokyo) EMPTY>   
+
+  <!ATTLIST divisa (estable) #IMPLIED>
+  <!ATTLIST divisa (precio) #REQUIRED>
+    <!ELEMENT divisa (nombre, tipos_de_cambio+, ciudad_procedencia)>
+      <!ELEMENT nombre (#PCDATA) #REQUIRED>   
+      <!ELEMENT tipos_de_cambio (#PCDATA)>   
+      <!ELEMENT ciudad_procedencia (Madrid|NuevaYork|Frankfurt|Tokyo) EMPTY>   
+
+  <!ATTLIST bonos (estable) #IMPLIED>
+  <!ATTLIST bonos (precio) #REQUIRED>
+    <!ELEMENT bonos (país_de_procedencia, valor_deseado, valor_mínimo, valor_máximo)>
+      <!ELEMENT país_de_procedencia (#PCDATA)>
+      <!ELEMENT valor_deseado (#PCDATA)>
+      <!ELEMENT valor_mínimo (#PCDATA)>
+      <!ELEMENT valor_máximo (#PCDATA)>
+
+
+  <!ATTLIST letras (precio) #REQUIRED>
+    <!ELEMENT letras (tipo_de_interés, país_emisor) #REQUIRED>
+      <!ELEMENT tipo_de_interés (#PCDATA)>
+      <!ELEMENT país_emisor (España|EEUU|Alemania|Japon) EMPTY>   
+
+]>
+
+
+
+<listado>
+     <futuro precio="11.28">
+              <producto>Cafe</producto>
+              <mercado>América Latina</mercado>
+              <ciudad_procedencia>
+                        <frankfurt/>
+              </ciudad_procedencia>
+      </futuro>
+      <divisa precio="183">
+                 <nombre_divisa>Libra esterlina</nombre_divisa> 
+                 <tipo_de_cambio>2.7:1 euros</tipo_de_cambio> 
+                 <tipo_de_cambio>1:0.87 dólares</tipo_de_cambio> 
+                 <ciudad_procedencia>
+                              <madrid/>
+                 </ciudad_procedencia>
+        </divisa>
+</listado>
