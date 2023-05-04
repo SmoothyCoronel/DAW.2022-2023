@@ -1,0 +1,44 @@
+Ejercicio VIII (DTD externo con atributos)
+
+***NOTA: ENVIAR UN ARCHIVO .xml JUNTO A OTRO .dtd QUE LO VALIDE***
+
+Una multinacional que opera en bolsa necesita un formato de intercambio de datos para que sus programas intercambien información sobre los mercados de acciones.
+En general todo archivo constará de un listado de cosas como se detalla a continuación:
+- En el listado aparecen siempre uno o varios “futuros”, después una o varias “divisas”,
+después uno o varios “bonos” y una o varias “letras”.
+- Todos ellos tienen un atributo “precio” que es obligatorio.
+- Todos ellos tienen un elemento vacío que indica de donde es el producto anterior:
+«Madrid», «Nueva York», «Frankfurt» o «Tokio».
+- Las divisas y los bonos tienen un atributo optativo que se usa para indicar si el producto
+ha sido “estable” en el pasado o no.
+- Un “futuro” es un valor esperado que tendrá un cierto producto en el futuro. Se debe
+incluir este producto en forma de elemento. También puede aparecer un elemento
+“mercado” que indique el país de procedencia del producto.
+- Todo “bono” tiene un elemento “país_de_procedencia” para saber a qué estado
+pertenece. “bono” debe tener tres elementos extra llamados «valor_deseado»,
+«valor_mínimo» y «valor_máximo» para saber los posibles precios.
+- Las divisas tienen siempre un “nombre” pueden incluir uno o más “tipos de cambio” para
+otras monedas.
+- Las letras tienen siempre un “tipo de interés” pagadero por un “país emisor”. El país
+emisor también debe existir y debe ser siempre de uno de los países cuyas capitales
+aparecen arriba (es decir «España», «EEUU», «Alemania» y «Japón»).
+
+Por ejemplo, el xml podría empezar así:
+
+<listado>
+     <futuro precio="11.28">
+              <producto>Cafe</producto>
+              <mercado>América Latina</mercado>
+              <ciudad_procedencia>
+                        <frankfurt/>
+              </ciudad_procedencia>
+      </futuro>
+      <divisa precio="183">
+                 <nombre_divisa>Libra esterlina</nombre_divisa> 
+                 <tipo_de_cambio>2.7:1 euros</tipo_de_cambio> 
+                 <tipo_de_cambio>1:0.87 dólares</tipo_de_cambio> 
+                 <ciudad_procedencia>
+                              <madrid/>
+                 </ciudad_procedencia>
+        </divisa>
+....  ....
