@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lista_de_notas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="lista_de_notas.xsd">
+
+  <nota num="11" dia="2011-02-02" hora="10:10:10">
+
+    <para>José</para>
+
+    <de>Ana</de>
+
+    <titulo>Cita</titulo>
+
+    <contenido>Nos vemos el sábado a las 15::00</contenido>
+
+  </nota>
+
+</lista_de_notas>
+
+
+***SOLUCION***
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="lista_de_notas">
+
+      <xs:complexType>
+
+          <xs:sequence> 
+
+                  <xs:element name="nota" maxOccurs="unbounded">
+
+                      <xs:complexType>
+
+                          <xs:all>                         
+
+                              <xs:element name="para" type="xs:string"/>
+
+                              <xs:element name="de" type="xs:string"/>
+
+                              <xs:element name="titulo" type="xs:string"/>
+
+                              <xs:element name="contenido" type="xs:string"/>                             
+
+                          </xs:all>
+
+                          <xs:attribute name="num" type="xs:integer" use="required"/>
+
+                          <xs:attribute name="dia" type="xs:date"/>
+
+                          <xs:attribute name="hora" type="xs:string"/>                         
+
+                      </xs:complexType>
+
+                  </xs:element>         
+
+          </xs:sequence>
+
+      </xs:complexType> 
+
+  </xs:element>
+
+</xs:schema>
+
