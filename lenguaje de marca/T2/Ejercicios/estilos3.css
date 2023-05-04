@@ -1,0 +1,13 @@
+body{
+    background-color: aliceblue;
+}
+.cabecera{
+    color:darkgreen;
+    background-color:darkorange;
+}
+.cuerpo{
+    color:green;
+}
+.pie{
+    color:rgb(123, 189, 26);
+}
