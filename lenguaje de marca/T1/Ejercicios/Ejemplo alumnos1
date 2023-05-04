@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+
+<alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="alumnos1.xsd">
+
+
+
+  <alumno>
+
+    <nombre>Jose</nombre>
+
+    <apellidos>García González</apellidos>
+
+    <direccion>
+
+      <domicilio>Urbieta, 12</domicilio>
+
+      <codigo_postal>20120</codigo_postal>
+
+      <localidad>Hernani</localidad>
+
+      <provincia>Gipuzkoa</provincia>
+
+    </direccion>
+
+    <contactar>
+
+      <telf_casa>943623165</telf_casa>
+
+      <telf_movil>611233544</telf_movil>
+
+      <telf_trabajo>943847536</telf_trabajo>
+
+      <email>pepito@ulhi.net</email>
+
+    </contactar>
+
+  </alumno>
+
+  <alumno>
+
+    <nombre>Aitana</nombre>
+
+    <apellidos>Artola Agirre</apellidos>
+
+    <direccion>
+
+      <domicilio>Puga Kalea, 25</domicilio>
+
+      <codigo_postal>01003</codigo_postal>
+
+      <localidad>Gasteiz</localidad>
+
+      <provincia>Araba</provincia>
+
+    </direccion>
+
+    <contactar>
+
+      <telf_casa>945132565</telf_casa>
+
+      <telf_movil>623863544</telf_movil>
+
+      <telf_trabajo>945657536</telf_trabajo>
+
+      <email>aitana@ulhi.net</email>
+
+    </contactar>
+
+  </alumno>
+
+ </alumnos>
+
+***SOLUCIÓN***
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+<!-- elemento raiz -->
+
+<xs:element name="alumnos" type="datosAlum"/>
+
+
+
+<!-- Definicion del tipo datosAlum -->
+
+  <xs:complexType name="datosAlum">
+
+    <xs:sequence>
+
+      <xs:element name="alumno" type="datos" minOccurs="1" maxOccurs="unbounded"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+
+
+<!-- Definicion del tipo datos -->
+
+<xs:complexType name="datos">
+
+  <xs:sequence>
+
+    <xs:element name="nombre" type="xs:string" minOccurs="1"  maxOccurs="1"/>
+
+    <xs:element name="apellidos" type="xs:string" minOccurs="1" maxOccurs="1"/>
+
+    <xs:element name="direccion" type="datosDireccion" minOccurs="1" maxOccurs="1"/>
+
+    <xs:element name="contactar" type="datosContactar" minOccurs="1" maxOccurs="1"/>
+
+  </xs:sequence>
+
+</xs:complexType>
+
+
+
+<xs:complexType name="datosDireccion">
+
+  <xs:sequence>
+
+    <xs:element name="domicilio" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+    <xs:element name="codigo_postal" minOccurs="0" maxOccurs="1" />
+
+    <xs:element name="localidad" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+    <xs:element name="provincia" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+  </xs:sequence>
+
+</xs:complexType>
+
+
+
+<xs:complexType name="datosContactar">
+
+  <xs:sequence>
+
+    <xs:element name="telf_casa" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+    <xs:element name="telf_movil" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+    <xs:element name="telf_trabajo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+    <xs:element name="email" type="xs:string" />
+
+  </xs:sequence>
+
+</xs:complexType>
+
+
+</xs:schema>  
