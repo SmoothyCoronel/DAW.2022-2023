@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicios -Tablas con Grid: 3 Celdas combinadas</title>
+<style>
+    .tabla{
+      font-family: sans-serif;
+      display: grid;
+      grid-gap: 1px;
+      grid-template-columns: 100px repeat(2,150px);
+      margin: 0 auto;
+      width: fit-content;
+    } 
+    .tabla div{
+      background: #697C88;
+      color: white;
+      padding: 18px;
+      text-align: center;
+    }
+    .cabecera{
+      grid-column: span 3;
+    }
+    .sidebar{
+      grid-row: span 2;
+    }
+  </style>
+  </head>
+  <body>
+  <div class="tabla">
+    <div class="cabecera"> celda 1</div>
+    <div class="sidebar"> celda 2</div>
+    <div> celda 3</div>
+    <div> celda 4</div>
+    <div> celda 5</div>
+    <div> celda 6</div>
+  </div>
+  </body>
+  </html>
