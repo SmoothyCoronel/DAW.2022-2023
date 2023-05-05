@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio maquetación Grid</title>
+	<style>
+       
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: 'Titillium Web', sans-serif;
+	background: #25282f;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+p {
+	font-size: 14px;
+}
+
+/* Todo el Grid */
+#Grid {
+	padding: 30px;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+	height: 100vh;
+}
+
+/* Grid Box */
+.Grid-box {
+	padding: 30px;
+}
+
+.Grid-box:nth-of-type(1) {
+	grid-row: 1;
+	grid-column: 1;
+}
+.Grid-box:nth-of-type(2) {
+	grid-row: 1/6;
+	grid-column: 2/4;
+}
+.Grid-box:nth-of-type(3) {
+	grid-row: 1;
+	grid-column: 4/7;
+}
+.Grid-box:nth-of-type(4) {
+	grid-row: 2/6;
+	grid-column: 1;
+}
+.Grid-box:nth-of-type(5) {
+	grid-row: 2/5;
+	grid-column: 4/7;
+	text-align: right;
+	padding-left: 200px;
+}
+
+.Grid-box:nth-of-type(5) h2 {
+	line-height: 1.1em;
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+.Grid-box:nth-of-type(6) {
+	grid-row: 5/6;
+	grid-column: 4;
+}
+.Grid-box:nth-of-type(7) {
+	grid-row: 5/6;
+	grid-column: 5;
+}
+.Grid-box:nth-of-type(8) {
+	grid-row: 5/6;
+	grid-column: 6;
+}
+
+.Grid-box-red {
+	background: #b93e37;
+}
+.Grid-box-blue {
+	background: #2952ba;
+}
+.Grid-box-yellow {
+	background: #d1ac39;
+}
+.Grid-box-white {
+	background: #fff;
+}
+
+    </style>
+		
+	</head>
+	<body>
+		<section id="Grid">
+			<div class="Grid-box Grid-box-red"></div>
+			<div class="Grid-box Grid-box-red"></div>
+			<div class="Grid-box Grid-box-blue"></div>
+			<div class="Grid-box Grid-box-yellow"></div>
+			<div class="Grid-box Grid-box-white">
+				<h2>Maquetación Grid</h2>
+                
+				<p>
+					La Maquetación Grid es un sistema de maquetación web basado en rejillas y celdas que se caracteriza por ser
+					bidimensional e independiente del orden del markup.
+					Es, además, un sistema extremadamente flexible.
+				</p>
+			</div>
+			<div class="Grid-box Grid-box-white"></div>
+			<div class="Grid-box Grid-box-blue"></div>
+			<div class="Grid-box Grid-box-yellow"></div>
+		</section>
+	</body>
+</html>
