@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio4</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            var numConcatena = 0;
+            var numero;
+            do{
+                numero = prompt ('¿Quieres escribir un número para la suma? Escribe: (no:cancelar)');
+
+                if(numero === 'cancelar'){
+                    break;
+                }
+                if(Number(numero) != numero){
+                    alert('Tienes que escribir números');
+                }
+                numConcatena += parseFloat(numero);
+            }while(true);
+
+            document.write("Calculator: ", numConcatena);
+        </script>
+    </body>
+</html>
