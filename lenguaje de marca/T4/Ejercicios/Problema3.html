@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio3</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            var cadenaConcatenada = "";
+            var cadenas;
+            do{
+                cadenas = prompt ('¿Quieres escribir cadena de texto? Escribe: (no:cancelar)');
+                
+                if(cadenas === 'cancelar'){
+                    break;
+                }
+                cadenaConcatenada += cadenas + "-";
+            }while(true);
+
+            cadenaConcatenada = cadenaConcatenada.slice(0, -1); 
+            document.write("Cadenas concatenadas: ", cadenaConcatenada);
+        </script>
+    </body>
+</html>
