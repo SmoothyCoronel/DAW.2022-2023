@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problema10</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            /*Muestra, gracias a un script, una web en la que se visualice la fecha de dos formas 
+            distintas.*/
+            var posible;
+            var año;
+            var mes;
+            var dia;
+            do{    
+                posible = 0;
+                año = prompt("Escribe año");
+                if(Number(año) != año){
+                    posible +1;
+                }
+                if(año.length != 4){
+                    posible +1;
+                }
+                mes = prompt("Escribe mes");
+                if(Number(año) != año){
+                    posible +1;
+                }
+                if(mes.length != 2){
+                    posible +1;
+                }
+                dia = prompt("Escribe día");
+                if(Number(año) != año){
+                    posible +1;
+                }
+                if(mes.length !=2){
+                    posible +1;
+                }
+            }while(posible > 0);
+
+            document.write("Una manera de escribir la fecha: "+ año +"-"+ mes +"-"+ dia +"\n");
+            document.write("Otra manera de escribir la fecha: "+ dia +"-"+ mes +"-"+ año);
+            
+        </script>
+    </body>
+</html>

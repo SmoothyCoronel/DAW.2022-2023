@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problema9</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+            <textarea id="myTextarea" rows="4" cols="50"></textarea>
+
+            <script>
+                 /* Con un script limita a 100 el número de caracteres que se puedan escribir en un 
+                    Textarea. */
+                var textarea = document.getElementById('myTextarea');
+
+                textarea.addEventListener('input', function() {
+                var maxLength = 100;
+                if (textarea.value.length > maxLength) {
+                    textarea.value = textarea.value.substring(0, maxLength);
+                }
+                });
+            </script>
+    </body>
+</html>

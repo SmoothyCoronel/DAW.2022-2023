@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Problema11</title>
+  <style>
+    #clock {
+      font-size: 48px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+
+  <script>
+    function displayTime() {
+      var clock = document.getElementById('clock');
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+
+      // Formateo de las horas, minutos y segundos para que siempre tengan 2 dígitos
+      hours = (hours < 10 ? "0" : "") + hours;
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+
+      // Mostrar el reloj digital en el elemento con el id "clock"
+      clock.innerHTML = hours + ":" + minutes + ":" + seconds;
+    }
+
+    // Actualizar el reloj cada segundo
+    setInterval(displayTime, 1000);
+  </script>
+</body>
+</html>

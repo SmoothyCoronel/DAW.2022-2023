@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problema7</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            /*Realizar un script que al introducir un número se muestre como resultado su 
+                factorial.*/
+                var numero = prompt ('Introduzce el número del resultado factorial: ');
+                var factorial = 1;
+                if (Number(numero) == numero) {
+                    for (var i = 1; i <= numero; i++) {
+                        factorial *= i;
+                    }
+                    document.write("El factorial de " + numero + " es: " + factorial);
+                }else {
+                    alert("Tienes que escribir un número");
+                }
+        </script>
+    </body>
+</html>
