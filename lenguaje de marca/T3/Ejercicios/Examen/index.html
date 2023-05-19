@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <title>Comida examen</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                margin: 0 auto;
+            }
+            header{
+                margin-left:35px;
+                margin-top:20px;
+                margin-bottom:10px;
+            }
+            img{
+                width:100%;
+            }
+            div[class*="caja-"]{
+                margin: 30px;
+            }
+            .comida{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .comida2{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .comida .caja-1{box-shadow: 0px 0px 0px 5px firebrick;}
+            .comida .caja-2{box-shadow: 0px 0px 0px 5px forestgreen;}
+            .comida .caja-3{box-shadow: 0px 0px 0px 5px gray;}
+            .comida .caja-4{box-shadow: 0px 0px 0px 5px indianred;}
+            .comida .caja-5{box-shadow: 0px 0px 0px 5px lightskyblue;}
+
+            .comida2 .caja-6{box-shadow: 0px 0px 0px 5px lime;}
+            .comida2 .caja-7{box-shadow: 0px 0px 0px 5px mediumseagreen;}
+            .comida2 .caja-8{box-shadow: 0px 0px 0px 5px moccasin;}
+
+            .patata{
+                margin-left:30px;
+            }
+            .sandwich{
+                margin-left:30px;
+                display:none;
+            }
+            .tortilla{
+                margin-left:30px;
+                display:none;
+            }
+ 
+
+            @media screen and (min-width: 576px) and (max-width: 992px){
+                .comida{
+                    margin: 0.25em 2em;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.25em;
+                    grid-template: 
+                    'celda1 celda1'
+                    'celda2 celda3'
+                    'celda2 celda4'
+                    'celda5 celda4';
+                }
+
+                .caja-1{ grid-area: celda1}
+                .caja-2{ grid-area: celda2}
+                .caja-3{ grid-area: celda3}
+                .caja-4{ grid-area: celda4}
+                .caja-5{ grid-area: celda5}
+
+                .comida2{
+                    margin: 0.25em 2em;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.025em;
+                    grid-template: 
+                    'celda6 celda7'
+                    'celda6 celda8';
+                }
+                .caja-6{grid-area: celda6}
+                .caja-7{grid-area: celda7}
+                .caja-7{grid-area: celda8}
+
+                .patata{
+                    margin-left:30px;
+                }
+                .sandwich{
+                    margin-left:30px;
+                   
+                }
+                .tortilla{
+                    margin-left:30px;
+                    display:none;
+                }
+                .texto{
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template: 
+                    'cubo1 cubo2';
+                }
+                .Sandwich{grid-area: cubo1}
+                .patata{grid-area:cubo2}
+            }
+            @media screen and (min-width: 992px){
+                .comida{
+                    margin: 0.5em 4em;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1em;
+                    grid-template: 
+                    'celda1 celda1 celda1 celda2'
+                    'celda1 celda1 celda1 celda3'
+                    'celda4 celda4 celda5 celda3'
+                    'celda4 celda4 celda5 celda3'
+                    'celda4 celda4 celda5 celda3';
+                }
+
+                .caja-1{ grid-area: celda1}
+                .caja-2{ grid-area: celda2}
+                .caja-3{ grid-area: celda3}
+                .caja-4{ grid-area: celda4}
+                .caja-5{ grid-area: celda5}
+
+                .comida2{
+                    margin: 0.5em 4em;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1em;
+                    grid-template: 
+                    'celda6 celda7 celda8'
+                    'celda6 celda7 celda8';
+                }
+                .caja-6{grid-area: celda6}
+                .caja-7{grid-area: celda7}
+                .caja-7{grid-area: celda8}
+
+                .patata{
+                    margin-left:60px;
+                }
+                .sandwich{
+                    margin-left:60px;
+                }
+                .tortilla{
+                    margin-left:60px;
+                }
+                .texto{
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template: 
+                    'cubo1 cubo3 cubo2';
+                }
+                .Sandwich{grid-area: cubo1}
+                .patata{grid-area: cubo2}
+                .tortilla{grid-area: cubo3}
+            }
+
+        </style>
+    </head>
+    
+<body>
+    <header>
+        <h1 class="heading">Cocina Conmigo</h1>
+    </header>
+    <div class="comida">
+        <div class="caja-1"><img src="img1.jpg"/></div>
+        <div class="caja-2"><img src="img2.jpg"/></div>
+        <div class="caja-3"><img src="img3.jpg"/></div>
+        <div class="caja-4"><img src="img4.jpg"/></div>
+        <div class="caja-5"><img src="img5.jpg"/></div>
+    </div>
+    <header>
+        <h1 class="heading">Mi elección particular</h1>
+    </header>
+    <div class="comida2">
+        <div class="caja-6"><img src="img6.jpg"/></div>
+        <div class="caja-7"><img src="img7.jpg"/></div>
+        <div class="caja-8"><img src="img8.jpg"/></div>
+    </div>
+
+    <div class="texto">
+        <div class="Sandwich"></div>
+            <h1 class="title-sandwich">Sandwich de salmon</h1>
+            <p class="text-sandwich">De vez en cuando uno se anima a comprar salmón 
+                ahumado pero sucede que después, no tienes muchas ideas de cómo y con 
+                qué puedes combinarlo. Aquí te damos una buena idea, el sándwich de 
+                salmón, queso y rúcula está delicioso, además de ser muy sano gracias a la 
+                variedad de nutrientes que incorpora con sus diferentes ingredientes. Tiene la 
+                ventaja de que se prepara muy rápidamente, por lo que es muy cómodo de 
+                hacer. ¡Perfecto para toda la familia!
+            </p>
+        </div>
+        <div class="tortilla">
+            <h1 class="title-tortilla">Tortilla de patatas</h1>
+            <p class="text-tortilla">
+                La tortilla de patatas es una de las más populares 
+                comidas españolas, propia de la cocina tradicional. Es un plato ideal para las 
+                comidas familiares, o para llevar de picnic, ya que se puede preparar con 
+                antelación. La receta tradicional de tortilla de patatas sólo consiste en una 
+                sencilla mezcla de huevos, patata, aceite y sal. Ingredientes sencillos que 
+                puedes usar para seguir esta receta, paso a paso, y conseguir una deliciosa 
+                tortilla.
+            </p>
+        </div>
+        <div class="patata">
+            <h1 class="title-patata">Patatas rellenas</h1>
+            <p class="text-patata">¡Patatas rellenas! Un plato económico, sencillo de preparar 
+                y versátil, ya que admite infinidad de variedades en su relleno. Desde las 
+                clásicas, con carne o beicon y gratinadas con queso, o con pescado y 
+                verduras, con sobrasada y miel... En algunas recetas, se cuecen primero las 
+                patatas y se vacía la pulpa para mezclarla con los ingredientes, en otras, se 
+                asan al horno primero y luego se rellenan.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
