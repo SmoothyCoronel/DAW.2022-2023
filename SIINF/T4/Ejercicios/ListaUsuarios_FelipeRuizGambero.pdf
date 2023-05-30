@@ -1,0 +1,14 @@
+Modulo: S11AW
+Fecha:  21/03/23
+Nombre: Felipe Ruiz Gambero
+
+Name               SID       
+Administrator      S-1-5-21-1070663094-857444348-4104423482-500
+alfredoff          S-1-5-21-1070663094-857444348-4104423482-1003
+FelipeRG           S-1-5-21-1070663094-857444348-4104423482-1000
+Guest              S-1-5-21-1070663094-857444348-4104423482-501
+marinapg           S-1-5-21-1070663094-857444348-4104423482-1001
+ramonam            S-1-5-21-1070663094-857444348-4104423482-1002
+
+Estos son SID: identificadores unicos utilizados por el sistema operativo de windows para identificar de manera exclusiva a cada usuario, grupo o entidad
+de seguridad en un dominio de red
