@@ -15,8 +15,12 @@ public class Implante {
 		this.sFecha = sFecha;
 		this.fPrecio = fPrecio;
 		this.bCobrado = false;
-                
+
+		if (fPrecio < 0f) fPrecio = 0;
                 bCobrado = (fPrecio==0f);
+
+		// if (fPrecio < 0f) fPrecio = 0;
+		// if (fPrecio == 0) this.bCobrado = true;
                 
             //"bCobrado =" introducido para conectarse con el precio del implante cuando ha sido pagado
 	}
