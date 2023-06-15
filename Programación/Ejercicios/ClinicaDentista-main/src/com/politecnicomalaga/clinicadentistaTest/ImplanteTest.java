@@ -19,6 +19,7 @@ public class ImplanteTest {
 	static String sfecha;       //= 13/06/2023
 	static float fprecio;       //= 10000f
 	static boolean bcobrado;
+	static Implante i,i2;
         
         
         @BeforeAll
@@ -28,20 +29,20 @@ public class ImplanteTest {
             sfecha = "13/06/2023";
             fprecio = 10000;
             bcobrado = false;
+	    i = new Implante("a", "a", "a",  0f);
+	    i2 = new Implante(ImplanteTest.scod, ImplanteTest.sdesc, ImplanteTest.sfecha, ImplanteTest.fprecio);
         }
         
         @Test
         void testConstructor(){
-            Implante i = new Implante(ImplanteTest.scod, ImplanteTest.sdesc, ImplanteTest.sfecha, ImplanteTest.fprecio);
-            assertTrue(ImplanteTest.scod.equals(i.getsCod()));
-            assertTrue(ImplanteTest.sdesc.equals(i.getsDescripcion()));
-            assertTrue(ImplanteTest.sfecha.equals(i.getsFecha()));
-            assertTrue(ImplanteTest.fprecio == i.getfPrecio());
+            assertTrue(ImplanteTest.scod.equals(i2.getsCod()));
+            assertTrue(ImplanteTest.sdesc.equals(i2.getsDescripcion()));
+            assertTrue(ImplanteTest.sfecha.equals(i2.getsFecha()));
+            assertTrue(ImplanteTest.fprecio == i2.getfPrecio());
         }
         
         @Test
         void testSettersGettes(){
-            Implante i = new Implante("a", "a", "a",  0f);
             i.setfPrecio(ImplanteTest.fprecio);
             i.setsCod(ImplanteTest.scod);
             i.setsDescripcion(ImplanteTest.sdesc);
@@ -59,11 +60,14 @@ public class ImplanteTest {
      */
     @Test
     public void testIsbCobrado() {
-        if(ImplanteTest.fprecio == 0){
-            assertTrue(ImplanteTest.bcobrado = true);
-        } else{
-            ImplanteTest.bcobrado = false;
-        }
+        //Activar: está ya hecho en el beforeAll
+	//Actuar: el constructor hace la asignación a bCobrado que considere necesaria
+	//Asserts ...
+
+	//Voy a probar el objeto i. Como el precio está a 0, debde de estar cobrado == true
+	assertTrue(i.isbCobrado());
+	//Voy a probar el objeto i2. Como vale 10000, no debe de estar cobrado
+	assertFalse(i2.isbCobrado()); //podría poner assertTrue(!i2.isbCobrado())
     }
 
     /**
@@ -71,7 +75,6 @@ public class ImplanteTest {
      */
     @Test
     public void testSetbCobrado() {
-        Implante i = new Implante("a", "a", "a",  0f);
         if(ImplanteTest.fprecio != 0){
             i.setbCobrado(ImplanteTest.bcobrado = false);
         }else{
