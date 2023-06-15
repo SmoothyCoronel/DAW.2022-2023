@@ -75,12 +75,19 @@ public class ImplanteTest {
      */
     @Test
     public void testSetbCobrado() {
-        if(ImplanteTest.fprecio != 0){
-            i.setbCobrado(ImplanteTest.bcobrado = false);
-        }else{
-            i.setbCobrado(ImplanteTest.bcobrado = true);
-        }
-        
+     //Voy a cambiarle el valor del precio de Implante i al de Implante i2
+     //En i bCobrado == True, en i2 bCobrado == False
+     //Vamos a comprobar que al cambiarlos bCobrado sea False
+     i.setfPrecio(i2.getfPrecio());
+
+     //Tiene que dar bCobrado == False
+     assertTrue(i.isbCobrado());
+
+     //Para comprobar también Implante i2
+     //Voy a cambiar el valor de su precio a -1
+     //Así voy a comprobar que el constructor de Implante lo cambie a 0 y bCobrado sea True
+     i2.setfPrecio(-1);
+     assertTrue(i2.isbCobrado);
     }
 
 
